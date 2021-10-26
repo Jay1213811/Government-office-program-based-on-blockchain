@@ -1,0 +1,30 @@
+<!--pages/informationDisclosure/home/home.wxml-->
+<!-- <scroll-view scroll-y="true" style="height: 1100rpx;" bindscrolltolower="getInformationDisclosure">
+  <view class="cu-card article" wx:for="{{informationDisclosureList}}" wx:key="id" data-index="{{index}}"
+    bindtap="toInfoDisclosure">
+    <view class="cu-item shadow">
+      <view class="title">
+        <view class="text-cut">用户昵称：{{item.userWxName}}</view>
+      </view>
+      <view class="content">
+        <image src="{{item.userAvatar}}" mode="aspectFill" style="height: 230rpx; width: 230rpx;"></image>
+        <view class="desc">
+          <view>
+            <view class="margin-bottom-lg">
+              <view class="cu-tag bg-{{item.publicKey?'green':'red'}} light sm round margin-right margin-left">用户公钥
+              </view>
+              <view class="cu-tag bg-{{item.address?'green':'red'}} light sm round">用户地址</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</scroll-view> -->
+
+  
+<view class="cu-form-group" style="position: relative;" wx:for="{{dataLinkArray}}" wx:key='name' data-index="{{index}}" >
+  <view class="title">{{item.name}}</view>
+  <view class="text-right" style="position: absolute; right: 90rpx;" data-index="{{index}}" bindtap="showPhoto">{{item.link == null ? '暂不公布': '点击查看'}}</view>
+  <text class="cuIcon-copy text-gray text-right" data-index="{{index}}" bindtap="showPhoto"></text>
+</view>

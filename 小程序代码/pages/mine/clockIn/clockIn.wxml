@@ -1,0 +1,27 @@
+<!--pages/mine/clockIn/clockIn.wxml-->
+<view class="zan-dialog zan-dialog--show">
+  <view class="zan-dialog__mask" />
+  <view class="zan-dialog__container">
+    <view class="padding flex flex-direction">
+      <view class="text-center text-xl text-bold text-cyan margin-bottom">当前地址</view>
+
+      <view class="text-center text-bold">{{localText}}</view>
+
+      <button class="cu-btn bg-cyan margin-top lg" style="width: 500rpx; height: 80rpx;"
+        bindtap="postAddressOnChain"><text class="cuIcon-check" style="margin-right: 7rpx;"></text>打卡</button>
+
+      <button class="cu-btn bg-cyan margin-top lg" style="width: 500rpx; height: 80rpx;" open-type="openSetting" bindtap="locationAuthorization"><text class="cuIcon-unlock" style="margin-right: 7rpx;"></text>授权获取地址</button>
+    </view>
+  </view>
+</view>
+<!-- <view class="cu-bar bg-white padding-top-sm" style="min-height: 80rpx; border-bottom: 2rpx solid #f1f1f1;">
+  <view class="action">
+    <text class="cuIcon-title text-cyan"></text>
+    <text class="text-black text-bold">当前地址</text>
+  </view>
+</view>
+<view class="cu-bar bg-white" style="min-height: 80rpx; border-bottom: 2rpx solid #f1f1f1;">
+  <view class="action" style=" margin:0 67rpx 0 67rpx;">
+    <text>{{localText}}</text>
+  </view>
+</view> -->

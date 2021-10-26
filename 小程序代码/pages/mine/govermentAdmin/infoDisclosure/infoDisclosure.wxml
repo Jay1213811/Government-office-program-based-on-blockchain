@@ -1,0 +1,32 @@
+<!--pages/mine/govermentAdmin/infoDisclosure/infoDisclosure.wxml-->
+<view class="cu-bar bg-white" style="margin-bottom: 1rpx;">
+    <view class="action">
+      <text class="cuIcon-title text-green"></text>
+      <text>选择要披露的信息</text>
+    </view>
+  </view>
+  <checkbox-group bindchange="checkboxChange0">
+    <view class="cu-form-group" wx:for="{{list0}}" wx:key="title">
+      <view class="title">{{item.title}}</view>
+      <checkbox class="round cyan" value="{{item.value}}" checked="{{item.checked}}"></checkbox>
+    </view>
+  </checkbox-group>
+  
+  <view class="cu-bar bg-white margin-top-xs" style="margin-bottom: 2rpx;">
+    <view class="action">
+      <text class="cuIcon-title text-green"></text>
+      <text>选择披露对象</text>
+    </view>
+  </view>
+  <checkbox-group bindchange="checkboxChange1">
+    <view class="cu-form-group" wx:for="{{list1}}" wx:key="title">
+      <view class="title">{{item.title}}</view>
+      <checkbox class="round cyan" value="{{item.value}}" checked="{{item.checked}}"></checkbox>
+    </view>
+  </checkbox-group>
+  <view class="btn-area padding-xl">
+    <button class="cu-btn block bg-cyan lg" style="width: 500rpx; height: 80rpx;" bindtap="postInfo"><text
+        class="cuIcon-upload" style="margin-right: 7rpx;"></text>确认提交</button>
+    <button class="cu-btn block bg-grey margin-tb-sm lg" style="width: 500rpx; height: 80rpx;" bindtap="resetInfo"><text
+        class="cuIcon-refresh" style="margin-right: 7rpx;"></text>重新填写</button>
+  </view>

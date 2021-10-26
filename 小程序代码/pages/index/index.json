@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "suggest": "/pages/suggest/home/home",
+    "resourceView": "/pages/resourceView/home/home",
+    "informationDisclosure": "/pages/informationDisclosure/home/home",
+    "mine": "/pages/mine/home/home"
+  }
+}

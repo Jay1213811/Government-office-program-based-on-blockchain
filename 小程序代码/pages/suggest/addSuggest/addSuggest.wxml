@@ -1,0 +1,15 @@
+<!--pages/suggest/addSuggest/addSuggest.wxml-->
+<view class="cu-form-group">
+    <view class="title">建言标题</view>
+    <input placeholder="如：审批流程问题建议" maxlength="50" value="{{suggestTitle}}" bindinput="getSuggestTitle"></input>
+  </view>
+  <view class="cu-form-group align-start" style="height: 500rpx;">
+    <view class="title">建言内容</view>
+    <textarea maxlength="-1" value="{{suggestContent}}" placeholder="请输入政府办公流程体制内存在的具体问题及有可能解决该问题的建议" bindinput="getSuggestContent" style="height: 450rpx;"></textarea>
+  </view>
+  <view class="btn-area padding-xl">
+    <button class="cu-btn block bg-cyan lg" style="width: 500rpx; height: 80rpx;" bindtap="postSuggest"><text
+        class="cuIcon-upload" style="margin-right: 7rpx;"></text>提交建议</button>
+    <button class="cu-btn block bg-grey margin-tb-sm lg" style="width: 500rpx; height: 80rpx;"
+      bindtap="resetSuggest"><text class="cuIcon-refresh" style="margin-right: 7rpx;"></text>重新填写</button>
+  </view>

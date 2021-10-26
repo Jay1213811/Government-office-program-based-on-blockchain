@@ -1,0 +1,31 @@
+<!--pages/mine/govermentAdmin/searchUserTrack/searchUserTrack.wxml-->
+<view id="search">
+		<image id="searchIcon" src="../../../../images/search.png"></image>
+		<input id="input" placeholder="如：1611628666" placeholder-class="placeholderClass" value="{{searchValue}}" bindinput="getSearchValue"></input>
+		<view id="comfirm" bindtap="search">搜索</view>
+</view>
+<view class="cu-bar padding-top-sm" style="min-height: 80rpx; border-bottom: 2rpx solid #f1f1f1; margin-top: 100rpx;" wx:if="{{hadSearch}}">
+  <view class="action">
+    <text class="margin-left cuIcon-title text-cyan"></text>
+    <text class="text-black text-bold">用户打卡记录</text>
+  </view>
+</view>
+<view class="cu-card article" style="height: auto;" wx:for="{{trackList}}" wx:key='id' wx:if="{{hadSearch}}">
+  <view class="cu-item shadow">
+    <view class="title" style="line-height: 80rpx;">
+      <view class="text-cut">{{item.fields.user_location}}</view>
+    </view>
+    <view class="content" style="height: auto;">
+      <!-- <view class="desc"> -->
+        <view class="cu-tag bg-white light sm round">{{item.fields.arrival_time}}</view>
+      <!-- </view> -->
+    </view>
+  </view>
+</view>
+<view id="blankArea"
+    style="width: 100%;position: absolute;top: 470rpx;display: flex;flex-direction: column;align-items: center;justify-content: center;"
+    wx:if="{{trackList.length == 0 && hadSearch}}">
+    <image id="blankImage" style="width: 114rpx;height: 100rpx;margin-bottom: 30rpx;" src="/images/blank.png"></image>
+    <view id="blankText" style="font-size: 26rpx;color: #999999;text-align: center;white-space:pre-line;">该用户无打卡记录
+    </view>
+</view>

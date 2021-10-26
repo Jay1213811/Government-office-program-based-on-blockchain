@@ -1,0 +1,41 @@
+<!-- 引入wxs脚本 -->
+<wxs src="../../../wxs/sub.wxs" module="tools" />
+<swiper class="screen-swiper square-dot" indicator-dots="true" circular="true" autoplay="true" interval="5000"
+  duration="500">
+  <swiper-item wx:for="{{swiperList}}" wx:key='id'>
+    <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
+  </swiper-item>
+</swiper>
+
+<view class="cu-bar" style="margin: 0rpx 0 1rpx 0;">
+  <view class="action">
+    <text class="cuIcon-title text-green"></text>
+    <text>人民建言</text>
+  </view>
+</view>
+
+<scroll-view scroll-y="true" style="height:1000rpx;" bindscrolltolower="getSuggest">
+  <view class="cu-card article" style="height: auto;" wx:for="{{suggestList}}" wx:key='id' data-index="{{index}}" bindtap="toSuggestInfo">
+    <view class="cu-item shadow">
+      <view class="title" style="line-height: 80rpx;">
+        <view class="text-cut">{{item.title}}</view>
+      </view>
+      <view class="content" style="height: auto;">
+        <view class="desc">
+          <view class="text-content" style=" height: auto; margin-bottom:20rpx;">{{tools.sub(item.content)}}</view>
+          <view>
+            <view class="cu-tag bg-red light sm round" wx:if="{{!item.isCompliance}}">包含违规内容</view>
+            <view class="cu-tag bg-green light sm round" wx:if="{{item.isCompliance}}">内容正常</view>
+            <view class="cu-tag bg-grey light sm round">{{item.userId}}</view>
+            <view class="cu-tag bg-white light sm round">{{item.suggestTime}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</scroll-view>
+
+<image style="width: 90rpx; height: 90rpx; border-radius: 50%; position: fixed; right: 40rpx; bottom: 150rpx;" src="/images/add.png" bindtap="toPostAction">
+</image>
+
+<view style="width: 100%; height: 110rpx;"></view>

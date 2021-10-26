@@ -1,0 +1,89 @@
+<!--pages/mine/govermentAdmin/fileInfo/fileInfo.wxml-->
+<view class="cu-bar bg-white padding-top-sm" style="min-height: 80rpx; border-bottom: 2rpx solid #f1f1f1;">
+  <view class="action">
+    <text class="cuIcon-title text-cyan"></text>
+    <text class="text-black text-bold">文件名称</text>
+  </view>
+</view>
+<view class="cu-bar bg-white" style="min-height: 80rpx; border-bottom: 2rpx solid #f1f1f1;">
+  <view class="action" style=" margin:0 67rpx 0 67rpx;">
+    <text>{{title}}</text>
+  </view>
+</view>
+<view class="cu-bar bg-white" style="min-height: 80rpx; border-bottom: 2rpx solid #f1f1f1;">
+  <view class="action">
+    <text class="cuIcon-title text-cyan"></text>
+    <text class="text-black text-bold">文件介绍</text>
+  </view>
+</view>
+<view class="cu-bar bg-white" style="min-height: 20rpx; border-bottom: 2rpx solid #f1f1f1;">
+  <view class="action padding text-content" style=" margin:0 37rpx 0 37rpx;">
+    <text>{{introduction}}</text>
+  </view>
+</view>
+<view class="cu-form-group" wx:if="{{identity == 0 || identity == 4}}">
+  <view class="title">时间</view>
+  <text class="text-right">{{uploadTime}}</text>
+</view>
+<view class="cu-form-group" wx:if="{{identity == 0}}">
+  <view class="title">下载次数</view>
+  <text class="text-right">{{downloadNum}}</text>
+</view>
+<view class="cu-form-group" wx:if="{{identity == 0 || identity == 4}}">
+  <view class="title">文件上传者ID：</view>
+  <text class="text-right">{{userId}}</text>
+</view>
+<view class="cu-form-group" wx:if="{{identity == 0}}">
+  <view class="title">最终结果</view>
+  <text class="text-right">{{researchResultText}}</text>
+</view>
+<view class="cu-form-group"  wx:if="{{identity != 2}}">
+  <view class="title">科长意见</view>
+  <picker bindchange="changeBoss1Picker" value="{{boss1Picker}}" range="{{signPicker}}" disabled="{{identity != 1}}">
+    <view class="picker">
+      {{signPicker[boss1Picker]}}
+    </view>
+  </picker>
+</view>
+<view class="cu-form-group" wx:if="{{identity != 1}}">
+  <view class="title">处长意见</view>
+  <picker bindchange="changeBoss2Picker" value="{{boss2Picker}}" range="{{signPicker}}" disabled="{{identity != 2}}">
+    <view class="picker">
+      {{signPicker[boss2Picker]}}
+    </view>
+  </picker>
+</view>
+<view class="cu-form-group" wx:if="{{identity != 1 && identity != 2}}">
+  <view class="title">校验员审核</view>
+  <picker bindchange="changeReviewPicker" value="{{reviewPicker}}" range="{{signPicker}}" disabled="{{identity != 3}}">
+    <view class="picker">
+      {{signPicker[reviewPicker]}}
+    </view>
+  </picker>
+</view>
+
+<view class="cu-form-group" wx:if="{{identity == 1 || identity == 2}}">
+  <view class="title">选择签名照片</view>
+  <input placeholder="{{chooseTits}}" placeholder-style="font-size: 24rpx;" disabled="true"></input>
+  <button class="cu-btn bg-cyan shadow sm" style="width: 130rpx;" bindtap="choosePhoto">点击选择</button>
+</view>
+
+<view class="text-center margin-top text-gray">校验可保证你下载的文件并未被他人修改</view>
+
+<view class="btn-area padding-xl">
+  <!-- 文件下载按钮 -->
+  <button class="cu-btn block {{buttonBg1}} lg" style="width: 550rpx; height: 80rpx;" bindtap="downloadDataAndCheck" data-button="1"
+    disabled="{{loading1}}"><text class="{{buttonIcon1}}" style="margin-right: 7rpx;"></text>{{buttonText1}}</button>
+  <!-- 教务处签名下载按钮 -->
+  <button class="cu-btn block {{buttonBg2}} lg margin-top" style="width: 550rpx; height: 80rpx;" bindtap="downloadDataAndCheck" data-button="2" wx:if="{{identity != 1 && identity != 2}}"
+    disabled="{{loading2 || boss1SignLink== null || boss1SignLink== ''}}"><text class="{{buttonIcon2}}" style="margin-right: 7rpx;"></text>{{buttonText2}}</button>
+  <!-- 院长签名下载按钮 -->
+  <button class="cu-btn block {{buttonBg3}} lg margin-top" style="width: 550rpx; height: 80rpx;" bindtap="downloadDataAndCheck" data-button="3" wx:if="{{identity != 1 && identity != 2}}"
+    disabled="{{loading3 || boss2SignLink== null || boss2SignLink== ''}}"><text class="{{buttonIcon3}}" style="margin-right: 7rpx;"></text>{{buttonText3}}</button>
+  <!-- 教务处或院长签名上传按钮 -->
+  <button class="cu-btn block bg-cyan lg margin-top" style="width: 550rpx; height: 80rpx;" bindtap="postData" wx:if="{{identity == 1 || identity == 2}}" disabled="{{posting}}"><text class="cuIcon-upload" style="margin-right: 7rpx;"></text>提交意见</button>
+  <!-- 三个文件校验按钮 -->
+  <button class="cu-btn block {{buttonBg5}} lg margin-top" style="width: 550rpx; height: 80rpx;" bindtap="checkFileHash" wx:if="{{identity != 1 && identity != 2}}" disabled="{{loading5}}"><text class="{{buttonIcon5}}" style="margin-right: 7rpx;"></text>校验当前材料</button>
+  <!-- 人事处审核上传按钮 -->
+  <button class="cu-btn block bg-cyan lg margin-top" style="width: 550rpx; height: 80rpx;" bindtap="bossCheck" wx:if="{{identity == 3}}"><text class="cuIcon-upload" style="margin-right: 7rpx;"></text>提交上传</button>
+</view>

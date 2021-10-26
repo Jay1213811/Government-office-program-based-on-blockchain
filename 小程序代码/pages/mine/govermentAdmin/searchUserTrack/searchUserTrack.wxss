@@ -1,0 +1,49 @@
+/* pages/mine/govermentAdmin/searchUserTrack/searchUserTrack.wxss */
+#search {
+  background-color: white;
+  width: 690rpx;
+  height: 70rpx;
+  top: 20rpx;
+  left: 30rpx;
+  border-radius: 20rpx;
+  display: flex;
+  position: absolute;
+  align-items: center;
+}
+
+#searchIcon {
+  margin: 0rpx 30rpx 0rpx 30rpx;
+  width: 30rpx;
+  height: 30rpx;
+}
+
+#input {
+  position: absolute;
+  /*top: 12rpx;*/
+  left: 80rpx;
+  font-size: 24rpx;
+  width: 390rpx;
+  height: 70rpx;
+}
+
+.placeholderClass{
+  color: #cacaca;
+  font-size: 24rpx;
+  line-height: 70rpx;
+}
+
+#comfirm {
+  background-color: #1cbbb4;
+  font-size: 24rpx;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 20rpx;
+  width: 100rpx;
+  height: 50rpx;
+  position: absolute;
+  /*top: 10rpx;*/
+  right: 20rpx;
+}

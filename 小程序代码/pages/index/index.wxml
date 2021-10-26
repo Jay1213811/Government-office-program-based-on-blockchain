@@ -1,0 +1,42 @@
+<!--index.wxml
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+</view>
+-->
+<suggest wx:if="{{PageCur=='suggest'}}"></suggest>
+<resourceView wx:if="{{PageCur=='resourceView'}}"></resourceView>
+<informationDisclosure wx:if="{{PageCur=='informationDisclosure'}}"></informationDisclosure>
+<mine wx:if="{{PageCur=='mine'}}"></mine>
+<view class="cu-bar tabbar bg-white foot">
+    <view class="action {{PageCur=='suggest'?'text-cyan':'text-gray'}}" bindtap="NavChange" data-cur="suggest">
+      <view class="{{PageCur=='suggest'?'cuIcon-homefill':'cuIcon-home'}}"></view> 首页
+    </view>
+    <view class="action {{PageCur=='resourceView'?'text-cyan':'text-gray'}}" bindtap="NavChange" data-cur="resourceView">
+      <view class="{{PageCur=='resourceView'?'cuIcon-formfill':'cuIcon-form'}}"></view> 政务公开
+    </view>
+    <!-- <view class="action {{PageCur=='postAction'?'text-cyan':'text-gray'}} add-action" bindtap="NavChange" data-cur="postAction">
+      <button class="cu-btn {{PageCur=='postAction'?'cuIcon-roundaddfill text-cyan':'cuIcon-roundadd text-grey'}}" style="font-size:70rpx;"></button>
+      发布上传
+    </view> -->
+    <view class="action {{PageCur=='informationDisclosure'?'text-cyan':'text-gray'}}" bindtap="NavChange" data-cur="informationDisclosure">
+      <view class="{{PageCur=='informationDisclosure'?'cuIcon-rankfill':'cuIcon-rank'}}">
+        <!--<view class="cu-tag badge">99</view>-->
+      </view>
+      数据开放
+    </view>
+    <view class="action {{PageCur=='mine'?'text-cyan':'text-gray'}}" bindtap="NavChange" data-cur="mine">
+      <view class="{{PageCur=='mine'?'cuIcon-myfill':'cuIcon-my'}}">
+        <!--<view class="cu-tag badge"></view>-->
+      </view>
+      我的
+    </view>
+  </view>

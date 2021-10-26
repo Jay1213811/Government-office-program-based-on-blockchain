@@ -1,0 +1,25 @@
+<!--pages/mine/govermentAdmin/addFile/addFile.wxml-->
+<view class="cu-form-group margin-top">
+    <view class="title">文件名称</view>
+    <input placeholder="如：关于XXX的公告.pdf" maxlength="50" value="{{dataTitle}}" bindinput="getDataTitle"></input>
+  </view>
+  <view class="cu-form-group align-start" style="height: 500rpx;">
+    <view class="title">文件简介</view>
+    <textarea maxlength="-1" value="{{dataIntroduction}}" placeholder="请简要介绍公文的主要面向对象及情况"
+      bindinput="getDataIntroduction" style="height: 450rpx;"></textarea>
+  </view>
+  <view class="cu-form-group">
+    <view class="title">选择文件</view>
+    <input placeholder="{{chooseTits}}" placeholder-style="font-size: 24rpx;" disabled="true"></input>
+    <button class="cu-btn bg-cyan shadow sm" style="width: 130rpx;" bindtap="chooseFile">点击选择</button>
+  </view>
+  <view class="btn-area padding-xl">
+    <button class="cu-btn block bg-cyan lg" style="width: 500rpx; height: 80rpx;" bindtap="postData"
+      disabled="{{posting}}"><text class="cuIcon-upload" style="margin-right: 7rpx;"></text>上传</button>
+    <button class="cu-btn block bg-grey margin-tb-sm lg" style="width: 500rpx; height: 80rpx;" bindtap="resetData"
+      disabled="{{posting}}"><text class="cuIcon-refresh" style="margin-right: 7rpx;"></text>重新填写</button>
+    <view class="cu-progress round striped activate" bindtap="didCancelTask">
+      <view class="bg-cyan" style="width:{{loading?messageFileProgress.progress + '%': ''}};">
+        {{messageFileProgress.progress}}%</view>
+    </view>
+  </view>

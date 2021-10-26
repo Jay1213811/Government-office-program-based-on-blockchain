@@ -1,0 +1,51 @@
+<!--pages/resourceView/resourceInfo/resourceInfo.wxml-->
+<view class="cu-bar bg-white padding-top-sm" style="min-height: 80rpx; border-bottom: 2rpx solid #f1f1f1;">
+  <view class="action">
+    <text class="cuIcon-title text-cyan"></text>
+    <text class="text-black text-bold">文件名称</text>
+  </view>
+</view>
+<view class="cu-bar bg-white" style="min-height: 80rpx; border-bottom: 2rpx solid #f1f1f1;">
+  <view class="action" style=" margin:0 67rpx 0 67rpx;">
+    <text>{{title}}</text>
+  </view>
+</view>
+<view class="cu-bar bg-white" style="min-height: 80rpx; border-bottom: 2rpx solid #f1f1f1;">
+  <view class="action">
+    <text class="cuIcon-title text-cyan"></text>
+    <text class="text-black text-bold">文件介绍</text>
+  </view>
+</view>
+<view class="cu-bar bg-white" style="min-height: 20rpx; border-bottom: 2rpx solid #f1f1f1;">
+  <view class="action padding text-content" style=" margin:0 37rpx 0 37rpx;">
+    <text>{{introduction}}</text>
+  </view>
+</view>
+<view class="cu-bar bg-white" style="min-height: 80rpx; border-bottom: 2rpx solid #f1f1f1;">
+  <view class="action">
+    <text class="cuIcon-title text-cyan"></text>
+    <text class="text-black text-bold">上传时间：</text><text>{{uploadTime}}</text>
+  </view>
+</view>
+<view class="cu-bar bg-white" style="min-height: 80rpx; border-bottom: 2rpx solid #f1f1f1;">
+  <view class="action">
+    <text class="cuIcon-title text-cyan"></text>
+    <text class="text-black text-bold">资料提供者ID：</text><text>{{userId}}</text>
+  </view>
+</view>
+<view class="cu-bar bg-white" style="min-height: 80rpx; border-bottom: 2rpx solid #f1f1f1;">
+  <view class="action">
+    <text class="cuIcon-title text-cyan"></text>
+    <text class="text-black text-bold">资料总下载次数：</text><text>{{downloadNum}}</text>
+  </view>
+</view>
+<view class="text-center margin-top text-gray">校验可保证你下载的文件并未被他人修改</view>
+
+<view class="btn-area padding-xl">
+  <button class="cu-btn block {{buttonBg}} lg" style="width: 550rpx; height: 80rpx;" bindtap="downloadDataAndCheck"
+    disabled="{{loading}}"><text class="{{buttonIcon}}" style="margin-right: 7rpx;"></text>{{buttonText}}</button>
+  <!-- <view class="cu-progress round striped activate">
+    <view class="{{progressBg}}" style="width:{{loading?downloadFileProgress.progress + '%': ''}};">
+      {{messageFileProgress.progress}}%</view>
+  </view> -->
+</view>

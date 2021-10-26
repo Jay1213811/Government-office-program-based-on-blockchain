@@ -1,0 +1,28 @@
+<!--pages/suggest/suggestInfo/suggestInfo.wxml-->
+<view class="cu-bar bg-white" style="margin: 0rpx 0 1rpx 0;">
+  <view class="action">
+    <text class="cuIcon-title text-green"></text>
+    <text>建言标题</text>
+  </view>
+</view>
+<view class="padding bg-white text-bold">{{title}}</view>
+<view class="cu-bar bg-white" style="margin: 1rpx 0 1rpx 0;">
+  <view class="action">
+    <text class="cuIcon-title text-green"></text>
+    <text>建言内容</text>
+  </view>
+</view>
+<view class="padding bg-white" style="margin: 0rpx 0 2rpx 0;text-align: justify;">{{content}}</view>
+
+<view class="cu-form-group">
+  <view class="title">上传时间</view>
+  <view>{{suggestTime}}</view>
+</view>
+<view class="cu-form-group">
+  <view class="title">上传用户ID</view>
+  <view class="text-right">{{userId}}</view>
+</view>
+<view class="cu-form-group">
+  <view class="title">内容是否合规</view>
+  <view class="text-{{isCompliance=='内容合规'?'green':'red'}}">{{isCompliance}}</view>
+</view>

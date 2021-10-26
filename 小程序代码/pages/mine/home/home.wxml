@@ -1,0 +1,155 @@
+<!--pages/mine/home/home.wxml-->
+<scroll-view scroll-y class="scrollPage">
+  <view class="flex flex-direction justify-center align-center margin" style="width: 690rpx; margin-top: 30rpx;">
+    <view class="round bg-white cu-avatar" style="background-image:url({{haveInfo?userAvatar:''}}); width: 110rpx; height:110rpx;">
+      <text class="cuIcon-people" wx:if="{{!haveInfo}}" style="font-size: 60rpx;"></text>
+    </view>
+    <button class="cu-btn bg-cyan margin-top-sm" wx:if="{{canIUse && !haveInfo}}" bindtap="bindGetUserInfo">获取微信头像和昵称</button>
+    <view class="text-lg margin-top-xs" wx:if="{{haveInfo}}">{{userNickName}}</view>
+    <view class="text-sm margin-top-xs text-grey margin-right-xs" bindtap="copyIdNumber">{{userTypeText}}ID：{{idNumber}} <text class="cuIcon-copy text-gray"></text></view>
+  </view>
+
+  
+
+  <view class="cu-list menu card-menu margin-xl shadow-lg radius" style="margin: 80rpx; margin-top:30rpx; margin-bottom:0;">
+    <view class="cu-item arrow" bindtap="toggleDialog">
+        <view class="content">
+          <text class="cuIcon-card text-orange light"></text>
+          <text class="text-grey">{{loginText}}</text>
+        </view>
+    </view>
+    <view class="cu-item arrow" bindtap="toCreditRecord">
+      <view class="content">
+          <text class="cuIcon-selectionfill text-green light"></text>
+          <text class="text-grey">信用记录（现信用值：{{creditPoint}}）</text>
+      </view>
+    </view>
+    <view class="cu-item arrow" bindtap="toggleDialog3">
+        <view class="content">
+          <text class="cuIcon-moneybagfill text-yellow light "></text>
+          <text class="text-grey">查看账户</text>
+        </view>
+    </view>
+    <!-- <view class="cu-item arrow" bindtap="toApply">
+        <view class="content">
+          <text class="cuIcon-formfill text-cyan"></text>
+          <text class="text-grey">我的保研申请</text>
+        </view>
+    </view>
+    <view class="cu-item arrow" bindtap="toPublicity">
+        <view class="content">
+          <text class="cuIcon-commentfill text-red"></text>
+          <text class="text-grey">保研结果公示</text>
+        </view>
+    </view> -->
+    <view class="cu-item arrow" bindtap="toClockIn">
+        <view class="content">
+          <text class="cuIcon-locationfill text-cyan"></text>
+          <text class="text-grey">日常打卡</text>
+        </view>
+    </view>
+    <view class="cu-item arrow" bindtap="toShowUserTrack">
+        <view class="content">
+          <text class="cuIcon-global text-cyan light"></text>
+          <text class="text-grey">查看个人轨迹</text>
+        </view>
+    </view>
+    <view class="cu-item arrow" bindtap="toggleDialog2">
+        <view class="content">
+          <text class="cuIcon-group_fill text-green"></text>
+          <text class="text-grey">政府办公入口</text>
+        </view>
+    </view>
+
+    <!-- <view class="cu-item arrow" bindtap="toInfoDisclosureRecord">
+        <view class="content">
+          <text class="cuIcon-markfill text-cyan"></text>
+          <text class="text-grey">查看披露记录</text>
+        </view>
+    </view> -->
+  </view>
+
+
+
+
+    <!-- 注册弹窗 -->
+    <view class="zan-dialog {{ showDialog ? 'zan-dialog--show' : '' }}">
+      <view class="zan-dialog__mask" bindtap="toggleDialog" />
+      <view class="zan-dialog__container">
+        <view class="padding flex flex-direction">
+          <view class="text-center text-xl text-bold text-cyan margin-top">{{registeredStatus?'登陆后获得发布和下载权限':'注册后获得发布和下载权限'}}</view>
+          <view class="cu-form-group margin-top">
+            <view class="title">用户账号</view>
+            <input disabled="true" value="{{userNickName}}"></input>
+          </view>
+          <view class="cu-form-group">
+            <view class="title">输入密码</view>
+            <input placeholder="请输入6~20位的密码" password="true" maxlength="20" value="{{password}}" bindinput='getPassword'></input>
+          </view>
+          <view class="cu-form-group" wx:if="{{!(isLogin || registeredStatus)}}">
+            <view class="title">确认密码</view>
+            <input placeholder="请重新输入密码" password="true" maxlength="20" value="{{passwordToCheck}}" bindinput='getPasswordToCheck'></input>
+          </view>
+          <view class="cu-form-group" wx:if="{{!(isLogin || registeredStatus)}}">
+          <view class="title">选择用户身份</view>
+            <picker bindchange="changeUserType" value="{{userType}}" range="{{userTypeList}}">
+              <view class="picker">
+                {{userTypeList[userType]}}
+              </view>
+            </picker>
+          </view>
+          <button class="cu-btn bg-cyan margin-top lg" bindtap="checkPasswordAndPost" wx:if="{{!registeredStatus}}">提交</button>
+          <button class="cu-btn bg-cyan margin-top lg" bindtap="login" wx:if="{{!isLogin&&registeredStatus}}">登陆</button>
+        </view>
+      </view>
+    </view>
+
+    <!-- 管理员输入密码 -->
+    <view class="zan-dialog {{ showDialog2 ? 'zan-dialog--show' : '' }}">
+      <view class="zan-dialog__mask" bindtap="toggleDialog2" />
+      <view class="zan-dialog__container">
+        <view class="padding flex flex-direction">
+          <view class="text-center text-xl text-bold text-cyan margin-bottom">请输入政府工作账号密码</view>
+          <view class="cu-form-group">
+            <view class="title">输入账号</view>
+            <input placeholder="请输入管理员账号" maxlength="20" value="{{adminAccount}}" bindinput='getAdminAccount'></input>
+          </view>
+          <view class="cu-form-group">
+            <view class="title">输入密码</view>
+            <input placeholder="请输入管理员密码" password="true" maxlength="20" value="{{adminPassword}}" bindinput='getAdminPassword'></input>
+          </view>
+          <button class="cu-btn bg-cyan margin-top lg" bindtap="toCheckApply">确认密码</button>
+        </view>
+      </view>
+    </view>
+
+    <!-- 查看账户 -->
+    <view class="zan-dialog {{ showDialog3 ? 'zan-dialog--show' : '' }}">
+      <view class="zan-dialog__mask" bindtap="toggleDialog3" />
+      <view class="zan-dialog__container">
+        <view class="padding flex flex-direction">
+          <view class="text-center text-xl text-bold text-cyan margin-bottom-sm">查看账户信息</view>
+          <view class="cu-form-group flex" bindtap="getAddress">
+              <text class="cuIcon-locationfill text-orange"></text>
+              <text class="text-grey" style="margin-left: -15rpx;">获取地址</text>
+              <view class="text-cut text-grey" style="width:300rpx; margin-right: -15rpx;">{{addressToCopy}}</view>
+              <text class="cuIcon-copy text-gray"></text>
+          </view>
+          <view class="cu-form-group flex" bindtap="getPublicKey">
+              <text class="cuIcon-voicefill text-cyan"></text>
+              <text class="text-grey">获取公钥</text>
+              <view class="text-cut text-grey" style="width:300rpx; margin-right: -15rpx;">{{publicKeyToCopy}}</view>
+              <text class="cuIcon-copy text-gray"></text>
+          </view>
+          <view class="cu-form-group flex" bindtap="getPrivateKey">
+              <text class="cuIcon-commandfill text-green"></text>
+              <text class="text-grey">获取私钥</text>
+              <view class="text-cut text-grey" style="width:300rpx; margin-right: -15rpx;">{{privateKeyToCopy}}</view>
+              <text class="cuIcon-copy text-gray"></text>
+          </view>          
+        </view>
+      </view>
+    </view>
+  <view class="cu-tabbar-height"></view>
+
+</scroll-view>

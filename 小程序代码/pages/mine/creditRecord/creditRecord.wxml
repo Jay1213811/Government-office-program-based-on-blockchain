@@ -1,0 +1,120 @@
+<!--pages/mine/creditRecord/creditRecord.wxml-->
+<wxs src="../../../wxs/sub.wxs" module="tools" />
+<scroll-view scroll-x class="bg-cyan nav text-center">
+  <view class="cu-item {{0==TabCur?'text-white cur':''}}" bindtap="tabSelect" data-id="0">
+    <text class="cuIcon-messagefill"></text> 建言信用记录
+  </view>
+  <!-- <view class="cu-item {{1==TabCur?'text-white cur':''}}" bindtap="tabSelect" data-id="1">
+    <text class="cuIcon-top"></text> 资源上传记录
+  </view> -->
+  <view class="cu-item {{2==TabCur?'text-white cur':''}}" bindtap="tabSelect" data-id="2">
+    <text class="cuIcon-down"></text> 文件下载记录
+  </view>
+</scroll-view>
+
+
+<view wx:if="{{TabCur == 0}}">
+  <scroll-view scroll-y="true" style="height: 1400rpx;" bindscrolltolower="getList" data-listType="0">
+    <view class="cu-card article" style="height: auto;" wx:for="{{suggestList}}" wx:key='id' data-index="{{index}}"
+      bindtap="toSuggestInfo">
+      <view class="cu-item shadow">
+        <view class="title" style="line-height: 80rpx;">
+          <view class="text-cut">{{item.title}}</view>
+        </view>
+        <view class="content" style="height: auto;">
+          <view class="desc">
+            <view class="text-content" style=" height: auto; margin-bottom:20rpx;">{{tools.sub(item.content)}}</view>
+            <view>
+              <view class="cu-tag bg-red light sm round" wx:if="{{!item.isCompliance}}">包含违规内容</view>
+              <view class="cu-tag bg-green light sm round" wx:if="{{item.isCompliance}}">内容正常</view>
+              <view class="cu-tag bg-grey light sm round" wx:if="{{!item.isCompliance}}">信用值-1</view>
+              <view class="cu-tag bg-white light sm round">{{item.suggestTime}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="blankArea" wx:if="{{suggestList.length == 0}}">
+      <image class="blankImage" src="/images/blank.png"></image>
+      <view class="blankText" style="white-space:pre-line;">暂时没有建言记录</view>
+    </view>
+  </scroll-view>
+
+</view>
+
+
+<view wx:if="{{TabCur == 1}}">
+  <scroll-view scroll-y="true" style="height: 1400rpx;" bindscrolltolower="getList" data-listType="1">
+    <view class="cu-card article" style="height: auto;" wx:for="{{resourceUpList}}" wx:key='id' data-index="{{index}}"
+      bindtap="toggleDialog">
+      <view class="cu-item shadow">
+        <view class="title" style="line-height: 80rpx;">
+          <view class="text-cut">{{item.title}}</view>
+        </view>
+        <view class="content" style="height: auto;">
+          <view class="desc">
+            <view class="text-content" style=" height: auto; margin-bottom:20rpx;">{{tools.sub(item.introduction)}}
+            </view>
+            <view>
+              <view class="cu-tag bg-green light sm round">所需信用值:{{item.dataValue}}</view>
+              <view class="cu-tag bg-green light sm round">下载次数:{{item.downloadNum}}</view>
+              <view class="cu-tag bg-white light sm round">{{item.uploadTime}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="blankArea" wx:if="{{resourceUpList.length == 0}}">
+      <image class="blankImage" src="/images/blank.png"></image>
+      <view class="blankText" style="white-space:pre-line;">暂时没有资源上传记录</view>
+    </view>
+  </scroll-view>
+</view>
+
+<view wx:if="{{TabCur == 2}}">
+  <scroll-view scroll-y="true" style="height: 1400rpx;" bindscrolltolower="getList" data-listType="2">
+    <view class="cu-card article" style="height: auto;" wx:for="{{resourceDownList}}" wx:key='id'
+      data-index="{{index}}">
+      <view class="cu-item shadow">
+        <view class="title" style="line-height: 80rpx;">
+          <view class="text-cut">{{item.title}}</view>
+        </view>
+        <view class="content" style="height: auto;">
+          <view class="desc">
+            <view class="text-content" style=" height: auto; margin-bottom:20rpx;">{{tools.sub(item.introduction)}}
+            </view>
+            <view>
+              <view class="cu-tag bg-green light sm round">下载次数:{{item.downloadNum}}</view>
+              <view class="cu-tag bg-grey light sm round">上传者:{{item.userId}}</view>
+              <view class="cu-tag bg-white light sm round">{{item.uploadTime}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="blankArea" wx:if="{{resourceDownList.length == 0}}">
+      <image class="blankImage" src="/images/blank.png"></image>
+      <view class="blankText" style="white-space:pre-line;">暂时没有资源下载记录</view>
+    </view>
+  </scroll-view>
+</view>
+
+<view class="zan-dialog {{ showDialog ? 'zan-dialog--show' : '' }}">
+  <view class="zan-dialog__mask" bindtap="toggleDialog" />
+  <view class="zan-dialog__container">
+    <view class="padding flex flex-direction">
+      <view class="text-center text-xl text-bold text-cyan margin-top">下载者列表</view>
+      <scroll-view scroll-y="true" style="height: 500rpx;" bindscrolltolower="getdownloaderList">
+        <view class="cu-form-group margin-top" wx:for="{{downloaderList}}" wx:key='index'
+          wx:if="{{downloaderList.length!=0}}">
+          <view class="title text-bold">用户账号</view>
+          <view class="text-right">{{item}}</view>
+        </view>
+        <view class="blankArea" wx:if="{{downloaderList.length == 0}}">
+          <image class="blankImage" src="/images/blank.png"></image>
+          <view class="blankText" style="white-space:pre-line;">暂时没有资源下载记录</view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+</view>

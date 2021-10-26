@@ -1,0 +1,23 @@
+<!--pages/resourceView/home/home.wxml-->
+<wxs src="../../../wxs/sub.wxs" module="tools" />
+<scroll-view scroll-y="true" style="height: 1200rpx;" bindscrolltolower="getFiles">
+  <view class="cu-card article" style="height: auto;" wx:for="{{officeFileList}}" wx:key='id' data-index="{{index}}"
+    bindtap="toFileInfo">
+    <view class="cu-item shadow">
+      <view class="title" style="line-height: 80rpx;">
+        <view class="text-cut">{{item.title}}</view>
+      </view>
+      <view class="content" style="height: auto;">
+        <view class="desc">
+          <view class="text-content" style=" height: auto; margin-bottom:20rpx;">{{tools.sub(item.introduction)}}</view>
+          <view>
+            <view class="cu-tag bg-green light sm round">下载次数:{{item.downloadNum}}</view>
+            <view class="cu-tag bg-grey light sm round">上传者:{{item.userId}}</view>
+            <view class="cu-tag bg-white light sm round">{{item.uploadTime}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</scroll-view>
+<view style="width: 100%; height: 110rpx;"></view>

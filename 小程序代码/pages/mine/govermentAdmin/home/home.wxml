@@ -1,0 +1,57 @@
+<!--pages/mine/govermentAdmin/home/home.wxml-->
+<view class="cu-list menu card-menu margin-xl shadow-lg radius"
+  style="margin: 80rpx; margin-top: 30rpx; margin-bottom:0;">
+  <view class="cu-item arrow" bindtap="toAddFile" wx:if="{{identity == 0}}">
+    <view class="content">
+      <text class="cuIcon-roundcheckfill text-green"></text>
+      <text class="text-grey">新增办公文件</text>
+    </view>
+  </view>
+  <view class="cu-item arrow" bindtap="toCheckFileHistory" wx:if="{{identity == 0}}">
+    <view class="content">
+      <text class="cuIcon-commentfill text-cyan"></text>
+      <text class="text-grey">查看文件历史状态</text>
+    </view>
+  </view>
+  <view class="cu-item arrow" bindtap="toBossCheckList" data-bossNum="1" wx:if="{{identity == 1}}">
+    <view class="content">
+      <text class="cuIcon-commentfill text-cyan"></text>
+      <text class="text-grey">科长审核</text>
+    </view>
+  </view>
+  <view class="cu-item arrow" bindtap="toBossCheckList" data-bossNum="2" wx:if="{{identity == 2}}">
+    <view class="content">
+      <text class="cuIcon-commentfill text-cyan"></text>
+      <text class="text-grey">处长审核</text>
+    </view>
+  </view>
+  <view class="cu-item arrow" bindtap="toCheckerList" data-bossNum="3" wx:if="{{identity == 3}}">
+    <view class="content">
+      <text class="cuIcon-commentfill text-cyan"></text>
+      <text class="text-grey">校验员审核</text>
+    </view>
+  </view>
+  <view class="cu-item arrow" bindtap="toSearchUserTrack">
+    <view class="content">
+      <text class="cuIcon-locationfill text-green"></text>
+      <text class="text-grey">查询用户轨迹</text>
+    </view>
+  </view>
+  <view class="cu-item arrow" bindtap="toInfoDisclosure" wx:if="{{identity == 2}}">
+    <view class="content">
+      <text class="cuIcon-rankfill text-green"></text>
+      <text class="text-grey">数据选择性公开</text>
+    </view>
+  </view>
+ <!--  <view class="cu-item arrow" bindtap="toInfoDisclosureRecord" wx:if="{{identity == 2}}">
+    <view class="content">
+      <text class="cuIcon-rankfill text-green"></text>
+      <text class="text-grey">查看用户查询数据记录</text>
+    </view>
+  </view> -->
+</view>
+
+<view class="flex flex-direction justify-center align-center margin" style="width: 690rpx; margin-top: 30rpx;">
+  <view class="text-sm text-grey">当前身份：{{adminTypeList[identity]}}</view>
+  <view class="text-sm margin-top-sm text-grey">当前部门：{{departmentName}}</view>
+</view>
