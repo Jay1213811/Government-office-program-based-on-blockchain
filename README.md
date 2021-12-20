@@ -41,16 +41,24 @@
 
 - 小程序端界面图：
 
+  ![](https://github.com/Jay1213811/Government-office-program-based-on-blockchain/blob/master/img/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%9B%BE/%E7%99%BB%E5%BD%95.png)
+
 ##### 2.建言献策：
 
 ​	我们模拟了普通用户可以在小程序上向政府提交一些意见，留言内容上链的同时会使用外部api对用户所发布的内容进行违规词检测，如果监测到违规词会将违规词用*符号替换，以保证软件内容文明友善。同时会对违规留言用户扣分，如果分数低于60分将无法留言。用户可输入建言标题和建言内容，确保内容无误后点击“提交建议”后数据将上传到云端服务器和区块链，在云端服务器中会调用api对用户所发布的内容进行违规词检测替换，若内容有不文明用词将扣除用户1点信用值，且将建言标题内容和信用扣除记录上传到区块链上，否则就只将建言标题内容上传到区块链上。
 
 - 小程序界面展示图：
 
+  ![](https://github.com/Jay1213811/Government-office-program-based-on-blockchain/blob/master/img/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%9B%BE/%E7%94%A8%E6%88%B7%E7%95%99%E8%A8%80.png)
+
 - 区块链端用户留言事件图：
+
+  ![](https://github.com/Jay1213811/Government-office-program-based-on-blockchain/blob/master/img/%E5%8C%BA%E5%9D%97%E9%93%BE%E9%83%A8%E5%88%86%E7%9A%84%E5%9B%BE/%E5%BB%BA%E8%A8%80%E7%8C%AE%E7%AD%96/%E7%94%A8%E6%88%B7%E7%95%99%E8%A8%80%E4%BA%8B%E4%BB%B6.png)
 
 - 区块链端用户违规留言事件图：
 
+  ![](https://github.com/Jay1213811/Government-office-program-based-on-blockchain/blob/master/img/%E5%8C%BA%E5%9D%97%E9%93%BE%E9%83%A8%E5%88%86%E7%9A%84%E5%9B%BE/%E5%BB%BA%E8%A8%80%E7%8C%AE%E7%AD%96/%E4%B8%8D%E8%89%AF%E7%95%99%E8%A8%80%E6%89%A3%E5%88%86%E4%BA%8B%E4%BB%B6.png)
+  
   
 
 ##### 3.建言浏览:
@@ -59,11 +67,17 @@
 
 - 小程序端界面展示图:
 
+  ![](https://github.com/Jay1213811/Government-office-program-based-on-blockchain/blob/master/img/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%9B%BE/%E6%B5%8F%E8%A7%88%E5%88%AB%E4%BA%BA%E7%95%99%E8%A8%80.png)
+
+  
+
 ##### 4.建言记录:
 
 用户可在个人中心的信用值记录查看自己提交的建言的详细记录.
 
 - 小程序界面图:
+
+  ![](https://github.com/Jay1213811/Government-office-program-based-on-blockchain/blob/master/img/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%9B%BE/%E6%9F%A5%E7%9C%8B%E7%95%99%E8%A8%80%E8%AF%A6%E6%83%85.png)
 
 ##### 5.巡检:
 
@@ -71,9 +85,21 @@
 
 - 小程序界面图:
 
+  1. 打卡
+
+     ![](https://github.com/Jay1213811/Government-office-program-based-on-blockchain/blob/master/img/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%9B%BE/%E6%89%93%E5%8D%A1.png)
+
+  2. 查看个人打卡记录
+
+     ![](https://github.com/Jay1213811/Government-office-program-based-on-blockchain/blob/master/img/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%9B%BE/%E6%9F%A5%E7%9C%8B%E4%B8%AA%E4%BA%BA%E6%89%93%E5%8D%A1%E8%AE%B0%E5%BD%95.png)
+
+  3. 领导查看下属打卡记录
+
+     ![](https://github.com/Jay1213811/Government-office-program-based-on-blockchain/blob/master/img/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%9B%BE/%E9%A2%86%E5%AF%BC%E6%9F%A5%E7%9C%8B%E4%B8%8B%E5%B1%9E%E6%89%93%E5%8D%A1%E8%AE%B0%E5%BD%95.png)
+
 - 区块链端界面图:
 
-  
+  ![](https://github.com/Jay1213811/Government-office-program-based-on-blockchain/blob/master/img/%E5%8C%BA%E5%9D%97%E9%93%BE%E9%83%A8%E5%88%86%E7%9A%84%E5%9B%BE/%E5%B7%A1%E6%A3%80/%E5%B7%A1%E6%A3%80%E7%94%A8%E6%88%B7%E6%89%93%E5%8D%A1.png)
 
 ##### 6.政务合作
 
@@ -83,9 +109,11 @@
 
 - 科员上传文件小程序界面图:
 
-- 科员申请材料数据记录图
+  ![](https://github.com/Jay1213811/Government-office-program-based-on-blockchain/blob/master/img/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%9B%BE/%E7%A7%91%E5%91%98%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6%E7%AD%89%E5%BE%85%E5%AE%A1%E6%A0%B8.png)
 
-  
+- 科员查看申请进度
+
+  ![](https://github.com/Jay1213811/Government-office-program-based-on-blockchain/blob/master/img/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%9B%BE/%E7%A7%91%E5%91%98%E6%9F%A5%E7%9C%8B%E6%96%87%E4%BB%B6%E5%AE%A1%E6%A0%B8%E8%BF%9B%E5%BA%A6.png)
 
 ##### 6.2领导审核文件
 
@@ -93,27 +121,25 @@
 
 - 科长审核界面图
 
+  ![](https://github.com/Jay1213811/Government-office-program-based-on-blockchain/blob/master/img/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%9B%BE/%E7%A7%91%E9%95%BF%E7%AD%BE%E5%90%8D%E5%AE%A1%E6%A0%B8.png)
+
 - 处长审核界面图
 
-- 领导签字照片哈希上链记录图
+  ![](https://github.com/Jay1213811/Government-office-program-based-on-blockchain/blob/master/img/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%9B%BE/%E5%A4%84%E9%95%BF%E5%AE%A1%E6%A0%B8.png)
 
 - 审核部门审核界面图
 
-- 审核事件数据记录图
+  ![](https://github.com/Jay1213811/Government-office-program-based-on-blockchain/blob/master/img/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%9B%BE/%E6%A0%A1%E9%AA%8C%E5%91%98%E5%AE%A1%E6%A0%B8.png)
 
+- 审核事件数据区块链端记录
+
+  ![](https://github.com/Jay1213811/Government-office-program-based-on-blockchain/blob/master/img/%E5%8C%BA%E5%9D%97%E9%93%BE%E9%83%A8%E5%88%86%E7%9A%84%E5%9B%BE/%E5%8D%8F%E5%90%8C%E5%8A%9E%E5%85%AC/%E5%AE%A1%E6%A0%B8%E4%BA%BA%E5%91%98%E5%AE%A1%E6%A0%B8%E4%BA%8B%E4%BB%B6.png)
   
-
-##### 6.3文件公示
-
-通过审核的文件给所有人查看并下载，以及对用户下载进行追踪。将谁在什么时候下载了哪一份文件，以及文件下载次数这些信息记录上链。
-
-- 浏览文件界面图
-
-- 下载文件界面图
-
-- 用户下载文件事件记录图
-
+  ![](https://github.com/Jay1213811/Government-office-program-based-on-blockchain/blob/master/img/%E5%8C%BA%E5%9D%97%E9%93%BE%E9%83%A8%E5%88%86%E7%9A%84%E5%9B%BE/%E5%8D%8F%E5%90%8C%E5%8A%9E%E5%85%AC/%E7%A7%91%E5%91%98%E6%8F%90%E4%BA%A4%E6%96%87%E4%BB%B6%E8%AF%B7%E6%B1%82%E5%85%AC%E7%A4%BA.png)
   
+  ![](https://github.com/Jay1213811/Government-office-program-based-on-blockchain/blob/master/img/%E5%8C%BA%E5%9D%97%E9%93%BE%E9%83%A8%E5%88%86%E7%9A%84%E5%9B%BE/%E5%8D%8F%E5%90%8C%E5%8A%9E%E5%85%AC/%E9%A2%86%E5%AF%BC%E5%AE%A1%E6%A0%B8%E7%AD%BE%E5%AD%97%E7%85%A7%E7%89%87%E5%93%88%E5%B8%8C%E4%B8%8A%E9%93%BE.png)
+
+
 
 ##### 7政府选择性开放数据以及数据追溯
 
@@ -121,21 +147,28 @@
 
 - 政府选择性公开数据界面图
 
+  ![](https://github.com/Jay1213811/Government-office-program-based-on-blockchain/blob/master/img/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%9B%BE/%E6%9F%A5%E7%9C%8B%E6%94%BF%E5%BA%9C%E5%85%AC%E5%BC%80%E7%9A%84%E6%95%B0%E6%8D%AE.png)
+
 - 选择性公开信息事件记录图
 
-  
+  ![](https://github.com/Jay1213811/Government-office-program-based-on-blockchain/blob/master/img/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%9B%BE/%E6%94%BF%E5%BA%9C%E4%BA%BA%E5%91%98%E6%95%B0%E6%8D%AE%E9%80%89%E6%8B%A9%E6%80%A7%E5%85%AC%E5%BC%80.jpeg)
 
 数据追溯：用户查看了数据后，区块链端将会留有记录，谁在什么时间查阅了什么数据将会被记录到区块链日志中
 
-- 用户查看数据界面图
-- 用户查看数据事件图
+- 用户查看数据界面区块链端图
+
+  ![](https://github.com/Jay1213811/Government-office-program-based-on-blockchain/blob/master/img/%E5%8C%BA%E5%9D%97%E9%93%BE%E9%83%A8%E5%88%86%E7%9A%84%E5%9B%BE/%E6%95%B0%E6%8D%AE%E8%BF%BD%E8%B8%AA/%E6%95%B0%E6%8D%AE%E8%BF%BD%E8%B8%AA%EF%BC%8C%E8%B0%81%E6%9F%A5%E7%9C%8B%E4%BA%86%E6%94%BF%E5%BA%9C%E5%85%AC%E5%BC%80%E7%9A%84XX%E4%BF%A1%E6%81%AF.png)
+
+- 领导选择性公开数据区块链端图
+
+  ![](https://github.com/Jay1213811/Government-office-program-based-on-blockchain/blob/master/img/%E5%8C%BA%E5%9D%97%E9%93%BE%E9%83%A8%E5%88%86%E7%9A%84%E5%9B%BE/%E6%95%B0%E6%8D%AE%E8%BF%BD%E8%B8%AA/%E9%A2%86%E5%AF%BC%E9%80%89%E6%8B%A9%E6%80%A7%E5%85%AC%E5%BC%80%E6%95%B0%E6%8D%AE%E4%BA%8B%E4%BB%B6.png)
 
 ## 
 
 ## 	后记
 
 - 该项目已获得2020-2021腾讯举办的高校微信小程序比赛**华中赛区三等奖**
-- 所有相关代码已经开源。运行有任何问题可以提issue。如项目对您有帮助，欢迎star支持！
+- 所有相关代码已经开源。运行有任何问题可以提issue。如项目对您有帮助，**欢迎star支持**！
 - 本人关注前沿知识，热衷于开源。获得**Fisco Bcos 2021年度贡献MVP**
 - 目前在准备找**Golong后端开发/区块链开发**相关实习，有一起的小伙伴可以滴滴.
 
