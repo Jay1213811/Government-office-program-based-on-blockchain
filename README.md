@@ -16,9 +16,11 @@
 
 - 功能模块图
 
+  ![image](https://github.com/Jay1213811/Government-office-program-based-on-blockchain/blob/master/img/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9D%97%E5%9B%BE.png)
+
 - 小程序体验图
 
-  
+  ![image](https://github.com/Jay1213811/Government-office-program-based-on-blockchain/blob/master/img/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%9B%BE.png)
 
 ## 系统实现
 1. ##### 注册登录：
@@ -29,11 +31,15 @@
 
 - 小程序端界面展示图：
 
+  ![](https://github.com/Jay1213811/Government-office-program-based-on-blockchain/blob/master/img/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%9B%BE/%E6%B3%A8%E5%86%8C.png)
+
 - 区块链端数据展示图：
+
+  ![](https://github.com/Jay1213811/Government-office-program-based-on-blockchain/blob/master/img/%E5%8C%BA%E5%9D%97%E9%93%BE%E9%83%A8%E5%88%86%E7%9A%84%E5%9B%BE/%E7%94%A8%E6%88%B7%E6%B3%A8%E5%86%8C/%E7%94%A8%E6%88%B7%E6%B3%A8%E5%86%8C%E4%BA%8B%E4%BB%B6.png)
 
 ##### 1.2.登录：确权登录的操作手段，以此实现用户的操作安全性，确保用户的账号数据安全为用户本人操作。用户密码后小程序端将做一次哈希运算。利用这个哈希值和区块链端链上这个用户id对应的密码哈希值比较，进行一次”确权“操作，校验一致后，通过则读取用户的信息展示到前端。读数据不会产生新的区块，因此区块链端没有新的信息产生：
 
-小程序端界面图：
+- 小程序端界面图：
 
 ##### 2.建言献策：
 
@@ -124,6 +130,12 @@
 - 用户查看数据界面图
 - 用户查看数据事件图
 
-## 开发者简介
+## 
 
-## 开发者简介
+## 	后记
+
+- 该项目已获得2020-2021腾讯举办的高校微信小程序比赛**华中赛区三等奖**
+- 所有相关代码已经开源。运行有任何问题可以提issue。如项目对您有帮助，欢迎star支持！
+- 本人关注前沿知识，热衷于开源。获得**Fisco Bcos 2021年度贡献MVP**
+- 目前在准备找**Golong后端开发/区块链开发**相关实习，有一起的小伙伴可以滴滴.
+
